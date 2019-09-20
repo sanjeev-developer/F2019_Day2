@@ -76,9 +76,12 @@ public class CollegeExample {
         }
         else
         {
-            System.out.println("Student total number = "+d);
-            System.out.println("Student percentage = "+(d/5));
+            student.setPercentage((d/5));
+            student.setTotal(d);
             student.setResult("pass");
+
+            System.out.println("Student total number = "+student.getTotal());
+            System.out.println("Student percentage = "+student.getPercentage());
             System.out.println("Student "+student.getResult() );
 
         }
