@@ -29,12 +29,12 @@ public class CollegeExample {
 
         SubjectAndMarks HindiMarks = new SubjectAndMarks();
         HindiMarks.setSubject("Hindi");
-        HindiMarks.setMarks(40);
+        HindiMarks.setMarks(90);
         studentresult.add(HindiMarks);
 
         SubjectAndMarks sciencemarks = new SubjectAndMarks();
         sciencemarks.setSubject("science");
-        sciencemarks.setMarks(40);
+        sciencemarks.setMarks(90);
         studentresult.add(sciencemarks);
 
         SubjectAndMarks Socialmarks = new SubjectAndMarks();
@@ -47,7 +47,7 @@ public class CollegeExample {
         student.setLastname("Gupta");
         student.setMarks(studentresult);
         student.setPercentage(90);
-        student.setResult("pass");
+
 
         System.out.println("Student FirstName = "+student.getFirstname());
         System.out.println("Student LastName = "+student.getLastname());
@@ -68,22 +68,42 @@ public class CollegeExample {
             }
         }
 
+            if(count >=2)
+            {
+                student.setResult("fail");
+                System.out.println("Student "+student.getResult() );
+            }
+            else
+            {
+                student.setPercentage((d/5));
+                student.setTotal(d);
+                student.setResult("pass");
 
-        if(count >=2)
-        {
-            student.setResult("fail");
-            System.out.println("Student "+student.getResult() );
+                System.out.println("Student total number = "+student.getTotal());
+                System.out.println("Student percentage = "+student.getPercentage());
+                System.out.println("Student "+student.getResult());
+
+
+                if(student.getPercentage()<72 && student.getPercentage()>70)
+                {
+                    System.out.println("B-");
+                }
+                if(student.getPercentage()<76 && student.getPercentage()>76)
+                {
+                    System.out.println("B");
+                }
+                if(student.getPercentage()<87 && student.getPercentage()>80)
+                {
+                    System.out.println("B+");
+                }
+                if(student.getPercentage()<94 && student.getPercentage()>87)
+                {
+                    System.out.println("A");
+                }
+                if(student.getPercentage()<100 && student.getPercentage()>94)
+                {
+                    System.out.println("A+");
+                }
+            }
         }
-        else
-        {
-            student.setPercentage((d/5));
-            student.setTotal(d);
-            student.setResult("pass");
-
-            System.out.println("Student total number = "+student.getTotal());
-            System.out.println("Student percentage = "+student.getPercentage());
-            System.out.println("Student "+student.getResult() );
-
-        }
-    }
 }
