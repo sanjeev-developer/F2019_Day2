@@ -29,12 +29,12 @@ public class CollegeExample {
 
         SubjectAndMarks HindiMarks = new SubjectAndMarks();
         HindiMarks.setSubject("Hindi");
-        HindiMarks.setMarks(70);
+        HindiMarks.setMarks(40);
         studentresult.add(HindiMarks);
 
         SubjectAndMarks sciencemarks = new SubjectAndMarks();
         sciencemarks.setSubject("science");
-        sciencemarks.setMarks(90);
+        sciencemarks.setMarks(40);
         studentresult.add(sciencemarks);
 
         SubjectAndMarks Socialmarks = new SubjectAndMarks();
@@ -47,17 +47,40 @@ public class CollegeExample {
         student.setLastname("Gupta");
         student.setMarks(studentresult);
         student.setPercentage(90);
-        student.setResult("Good");
+        student.setResult("pass");
 
         System.out.println("Student FirstName = "+student.getFirstname());
         System.out.println("Student LastName = "+student.getLastname());
-        System.out.println("Student Percentage = "+student.getPercentage());
-        System.out.println("Student result = "+student.getResult());
 
+
+        int d=0;
+        int count =0;
         for(int i=0; i<student.getMarks().size();i++)
         {
             System.out.println("Student subject = "+student.getMarks().get(i).getSubject());
             System.out.println("Student marks = "+student.getMarks().get(i).getMarks());
+
+            d=d+student.getMarks().get(i).getMarks();
+
+            if(50>student.getMarks().get(i).getMarks())
+            {
+                count++;
+            }
+        }
+
+
+        if(count >=2)
+        {
+            student.setResult("fail");
+            System.out.println("Student "+student.getResult() );
+        }
+        else
+        {
+            System.out.println("Student total number = "+d);
+            System.out.println("Student percentage = "+(d/5));
+            student.setResult("pass");
+            System.out.println("Student "+student.getResult() );
+
         }
     }
 }
