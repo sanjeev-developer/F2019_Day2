@@ -88,19 +88,19 @@ public class CollegeExample {
                 {
                     System.out.println("B-");
                 }
-                if(student.getPercentage()<76 && student.getPercentage()>76)
+                else if(student.getPercentage()<76 && student.getPercentage()>76)
                 {
                     System.out.println("B");
                 }
-                if(student.getPercentage()<87 && student.getPercentage()>80)
+               else if(student.getPercentage()<87 && student.getPercentage()>80)
                 {
                     System.out.println("B+");
                 }
-                if(student.getPercentage()<94 && student.getPercentage()>87)
+               else if(student.getPercentage()<94 && student.getPercentage()>87)
                 {
                     System.out.println("A");
                 }
-                if(student.getPercentage()<100 && student.getPercentage()>94)
+               else if(student.getPercentage()<100 && student.getPercentage()>94)
                 {
                     System.out.println("A+");
                 }
